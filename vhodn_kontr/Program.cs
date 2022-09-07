@@ -56,6 +56,54 @@ namespace vhodn_kontr
             
         }
 
+        static void vvod4(int n)
+        {
+            double m = 1;
+            double o = 2;
+            double c = 0;
+            
+            for (int i = 1; i <= n; i++)
+            {
+                c = c + m/o;
+                m=m+1;
+                o=o+1;
+            }
+            Console.WriteLine($"Результат вычислений = {c}");
+        }
+
+        static void vvod5(double nn, double nnn, double nnnn)
+        {
+            if (nn > nnn && nn > nnnn)
+            {
+                Console.WriteLine($"Первый победил {nn}");
+            }
+            if (nnn > nn && nnn > nnnn)
+            {
+                Console.WriteLine($"Второй победил {nnn}");
+            }
+            if (nnnn > nn && nnnn > nnn)
+            {
+                Console.WriteLine($"Третий победил {nnnn}");
+            }
+            if (nn > nnnn && nnn > nnnn)
+            {
+                Console.WriteLine($"Первый и второй победили {nn} и {nnn}");
+            }
+            if (nn > nnn && nnnn > nnn)
+            {
+                Console.WriteLine($"Первый и третий победили {nn} и {nnnn}");
+            }
+            if (nnn > nn && nnnn > nn)
+            {
+                Console.WriteLine($"Второй и третий победили {nnn} и {nnnn}");
+            }
+            else
+            {
+                Console.WriteLine($"Ничья {nn} и {nnn} и {nnnn}");
+            }
+
+        }
+
         static void Main (string[] arg)
         {
             while (true)
@@ -115,7 +163,37 @@ namespace vhodn_kontr
                 {
                     Console.WriteLine("Введены некоректные данные");
                 }
-                
+                Console.WriteLine();
+                Console.WriteLine("Задача 7:");
+                int n;
+                try
+                {
+                    Console.WriteLine("Введите число n:");
+                    n = Convert.ToInt32(Console.ReadLine());
+                    vvod4(n);
+                }
+                catch
+                {
+                    Console.WriteLine("Введены некоректные данные");
+                }
+                Console.WriteLine();
+                Console.WriteLine("Задача 8:");
+                double nn, nnn, nnnn;
+                try
+                {
+                    Console.WriteLine("Введите результат первого спортсмена:");
+                    nn = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Введите результат второго спортсмена:");
+                    nnn = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Введите результат третьего спортсмена:");
+                    nnnn = Convert.ToDouble(Console.ReadLine());
+                    vvod5(nn, nnn, nnnn);
+                }
+                catch
+                {
+                    Console.WriteLine("Введены некоректные данные");
+                }
+
 
                 char otv;
                 while (true)

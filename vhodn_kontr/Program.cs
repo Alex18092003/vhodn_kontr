@@ -19,11 +19,11 @@ namespace vhodn_kontr
             double a = c % 3;
             if (d == a)
             {
-                Console.WriteLine("Число дает одинаковый остаток");
+                Console.WriteLine("Число дает одинаковый остаток при деление на 2 и на 3");
             }
             else
             {
-                Console.WriteLine("Число дает не одинаковый остаток");
+                Console.WriteLine("Число дает не одинаковый остаток при деление на 2 и на 3");
             }
 
 
@@ -32,10 +32,28 @@ namespace vhodn_kontr
         static void vvod3(double v, double d)
         {
             double c = 1 + Math.Sin(Math.Sqrt(v+1));
-            
-            
+            double l = Math.Cos(12*d - 4);
+            Console.WriteLine($"Результат вычисления примера = {c/l}");
+        }
 
-
+        static void Fibonachi (int l)
+        {
+            int prev = 0;
+            int curr = 1;
+            int next = 1;
+            Console.WriteLine("Последовательность чисел Фибоначчи с четным индексом: "); ;
+            for (int i = 1; i <= l; i++)
+{
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine("Число = " + curr + " Индекс = " + i);
+                }
+                prev = curr;
+                curr = next;
+                next = prev + curr;
+                
+            }
+            
         }
 
         static void Main (string[] arg)
@@ -56,7 +74,7 @@ namespace vhodn_kontr
                 {
                     Console.WriteLine("Введены некоректные данные");
                 }
-
+                Console.WriteLine();
                 Console.WriteLine("Задача 3:");
                 double c;
                 try
@@ -69,7 +87,7 @@ namespace vhodn_kontr
                 {
                     Console.WriteLine("Введены некоректные данные");
                 }
-
+                Console.WriteLine();
                 Console.WriteLine("Задача 5:");
                 double v, d;
                 try
@@ -84,13 +102,27 @@ namespace vhodn_kontr
                 {
                     Console.WriteLine("Введены некоректные данные");
                 }
+                Console.WriteLine();
+                Console.WriteLine("Задача 6:");
+                int l;
+                try
+                {
+                    Console.WriteLine("Введите количество чисел Фибоначчи:");
+                    l = Convert.ToInt32(Console.ReadLine());
+                    Fibonachi(l);
+                }
+                catch
+                {
+                    Console.WriteLine("Введены некоректные данные");
+                }
+                
 
                 char otv;
                 while (true)
                 {
                     try
                     {
-                        Console.WriteLine("Хотите повторить выполнение программ? \nЕсли да, то нажмите на кнопку Y (на англ)\n Если нет, то нажмите на любую другую кнопку \nОтвет:");
+                        Console.WriteLine("Хотите повторить выполнение программ? \nЕсли да, то нажмите на кнопку Y (на англ)\nЕсли нет, то нажмите на любую другую кнопку \nОтвет:");
                         otv = Convert.ToChar(Console.ReadLine());
                         break;
                     }
